@@ -40,4 +40,14 @@ public class AlunoController {
         );
     }
 
+    @PutMapping("/{id}")
+    public void update(@PathVariable Long id,
+                       @RequestBody AlunoRequest alunoRequest){
+        alunoService.uptade(id, alunoRequest);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
+        alunoService.deleteById(id);
+    }
 }
